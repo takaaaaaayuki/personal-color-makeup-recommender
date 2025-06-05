@@ -1,15 +1,10 @@
-# Jupyter Notebook ファイル
+# 全ての .ipynb を無視
 *.ipynb
 
-# 特定ディレクトリ（絶対パスではなく、プロジェクト内の相対パスで書く）
+# 特定ディレクトリを無視（必要であれば）
 personal_color/
 test_gazou/
 upload/
 
-# 念のためMac用とPython関連も
-.DS_Store
-__pycache__/
-*.pyc
-
-# 環境変数ファイル
-.env
+# ただしこのファイルは追跡対象とする（拡張子なしでもOK）
+!web_app/web_app

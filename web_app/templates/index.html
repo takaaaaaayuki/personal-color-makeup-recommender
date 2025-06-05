@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パーソナルカラー診断</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>パーソナルカラー診断</h1>
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <label for="file">画像をアップロードしてください:</label>
+        <input type="file" name="file" id="file">
+        <button type="submit">診断する</button>
+    </form>
+</body>
+</html>

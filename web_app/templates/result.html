@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .spring { color: pink; }
+        .summer { color: lightblue; }
+        .autumn { color: orange; }
+        .winter { color: darkblue; }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .box {
+            width: 49%;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .box h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .box h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .box p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>判定結果</h1>
+            <h2>肌の色に基づく判定</h2>
+            <p>この写真の肌のRGBは <span class="{{ nearest_rgb | lower }}">{{ nearest_rgb | upper }}</span> に近いです</p>
+            <p>この写真の肌のHSVは <span class="{{ nearest_hsv | lower }}">{{ nearest_hsv | upper }}</span> に近いです</p>
+            <p>この写真の肌のLabは <span class="{{ nearest_lab | lower }}">{{ nearest_lab | upper }}</span> に近いです</p>
+
+            <h2>目の色に基づく判定</h2>
+            <p>この写真の目の値は <span class="{{ closest_season_eye | lower }}">{{ closest_season_eye | upper }}</span> に近いです</p>
+
+            <h2>総合評価</h2>
+            <p>総合評価として、この写真は <span class="{{ overall_season | lower }}">{{ overall_season | upper }}</span> に最も近いです</p>
+        </div>
+        <div class="box">
+            <h1>おすすめのメイク道具</h1>
+            <p>春におすすめのメイク道具: メイク道具1, メイク道具2, メイク道具3, ...</p>
+            <p>夏におすすめのメイク道具: メイク道具A, メイク道具B, メイク道具C, ...</p>
+            <p>秋におすすめのメイク道具: メイク道具X, メイク道具Y, メイク道具Z, ...</p>
+            <p>冬におすすめのメイク道具: メイク道具α, メイク道具β, メイク道具γ, ...</p>
+        </div>
+    </div>
+</body>
+</html>
