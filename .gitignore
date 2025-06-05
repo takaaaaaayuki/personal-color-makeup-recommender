@@ -1,0 +1,15 @@
+# Jupyter Notebook ファイル
+*.ipynb
+
+# 特定ディレクトリ（絶対パスではなく、プロジェクト内の相対パスで書く）
+personal_color/
+test_gazou/
+upload/
+
+# 念のためMac用とPython関連も
+.DS_Store
+__pycache__/
+*.pyc
+
+# 環境変数ファイル
+.env
